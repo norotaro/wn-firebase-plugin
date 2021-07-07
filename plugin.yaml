@@ -1,0 +1,6 @@
+plugin:
+    name: 'norotaro.firebase::lang.plugin.name'
+    description: 'norotaro.firebase::lang.plugin.description'
+    author: Norotaro
+    icon: oc-icon-fire
+    homepage: ''

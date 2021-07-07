@@ -1,0 +1,148 @@
+fields:
+  section:
+    label: "Project {project}"
+    type: "section"
+  credentials:
+    label: "Credentials"
+    type: "nestedform"
+    form:
+      fields:
+        section:
+          type: "hint"
+          path: "$/norotaro/firebase/models/settings/_credentials_hint.htm"
+        auto_discovery:
+          label: "Auto discovery"
+          commentAbove: "
+            If you want to prevent the auto discovery of credentials, set the following
+            parameter to false. If you disable it, you must provide a credentials file.
+          "
+          default: true
+          type: "switch"
+          span: auto
+          on: "On"
+          off: "Off"
+  auth:
+    label: "Firebase Auth Component"
+    type: "nestedform"
+    form:
+      fields:
+        tenant_id:
+          label: "Tenant ID"
+          commentAbove: "<strong>Default value:</strong> <code>env('FIREBASE_AUTH_TENANT_ID')</code>"
+          commentHtml: true
+  database:
+    label: "Firebase Realtime Database"
+    type: "nestedform"
+    form:
+      fields:
+        url:
+          label: "URL"
+          commentAbove: "
+            In most of the cases the project ID defined in the credentials file determines
+            the URL of your project's Realtime Database. If the connection to the Realtime
+            Database fails, you can override its URL with the value you see at
+            <a href='https://console.firebase.google.com/u/1/project/_/databaseDefault' target='_blank'>
+              https://console.firebase.google.com/u/1/project/_/databaseDefault
+            </a>.
+            <br />
+            Please make sure that you use a full URL like, for example,
+            https://my-project-id.firebaseio.com
+            <br /><br />
+            <strong>Default value:</strong> <code>env('FIREBASE_DATABASE_URL')</code>
+          "
+          commentHtml: true
+  dynamic_links:
+    label: "Firebase Realtime Database"
+    type: "nestedform"
+    form:
+      fields:
+        default_domain:
+          label: "Default domain"
+          commentAbove: "
+            Dynamic links can be built with any URL prefix registered on
+            <a href='https://console.firebase.google.com/u/1/project/_/durablelinks/links/' target='_blank'>
+              https://console.firebase.google.com/u/1/project/_/durablelinks/links/
+            </a><br />
+            You can define one of those domains as the default for
+            new Dynamic Links created within your project.<br />
+            The value must be a valid domain, for example,
+            https://example.page.link<br />
+            <br />
+            <strong>Default value:</strong> <code>env('FIREBASE_DYNAMIC_LINKS_DEFAULT_DOMAIN')</code>
+          "
+          commentHtml: true
+  storage:
+    label: "Firebase Cloud Storage"
+    type: "nestedform"
+    form:
+      fields:
+        default_bucket:
+          label: "Default bucket"
+          commentAbove: "
+            Your project's default storage bucket usually uses the project ID as
+            its name. If you have multiple storage buckets and want to use another
+            one as the default for your application, you can override it here.
+            <br /><br />
+            <strong>Default value:</strong> <code>env('FIREBASE_STORAGE_DEFAULT_BUCKET')</code>
+          "
+          commentHtml: true
+  cache_store:
+    label: "Cache store"
+    commentAbove: "
+      The Firebase Admin SDK can cache some data returned from the Firebase
+      API, for example Google's public keys used to verify ID tokens.
+      <br /><br />
+      <strong>Default value:</strong> <code>env('FIREBASE_CACHE_STORE', 'file')</code>
+    "
+    commentHtml: true
+  logging:
+    label: "Logging"
+    commentAbove: "
+      Enable logging of HTTP interaction for insights and/or debugging.<br />
+      Log channels are defined in <code>config/logging.php</code><br />
+      <br />
+      Successful HTTP messages are logged with the log level 'info'.<br />
+      Failed HTTP messages are logged with the the log level 'notice'.<br />
+      <br />
+      Note: Using the same channel for simple and debug logs will result in
+      two entries per request and response.
+    "
+    commentHtml: true
+    type: "nestedform"
+    form:
+      fields:
+        http_log_channel:
+          label: "Default bucket"
+          commentAbove: "<strong>Default value:</strong> <code>env('FIREBASE_HTTP_LOG_CHANNEL')</code>"
+          commentHtml: true
+        http_debug_log_channel:
+          label: "Default bucket"
+          commentAbove: "<strong>Default value:</strong> <code>env('FIREBASE_HTTP_DEBUG_LOG_CHANNEL')</code>"
+          commentHtml: true
+  http_client_options:
+    label: "HTTP Client Options"
+    commentAbove: "Behavior of the HTTP Client performing the API requests"
+    type: "nestedform"
+    form:
+      fields:
+        proxy:
+          label: "Proxy"
+          commentAbove: "
+            Use a proxy that all API requests should be passed through.<br />
+            <strong>Default value:</strong> <code>env('FIREBASE_HTTP_CLIENT_PROXY')</code>
+          "
+          commentHtml: true
+        timeout:
+          label: "Timeout"
+          commentAbove: "
+            Use a proxy that all API requests should be passed through.<br />
+            <strong>Default value:</strong> <code>env('FIREBASE_HTTP_CLIENT_TIMEOUT')</code>
+          "
+          commentHtml: true
+  debug:
+    label: "Debug (deprecated)"
+    commentAbove: "
+      Enable debugging of HTTP requests made directly from the SDK.
+      <strong>Default value:</strong> <code>env('FIREBASE_ENABLE_DEBUG', false)</code>
+    "
+    commentHtml: true

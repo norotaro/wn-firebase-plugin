@@ -1,0 +1,30 @@
+{
+    "name": "norotaro/wn-firebase-plugin",
+    "desciption": "WinterCMS plugin for easily configure Firebase SDK",
+    "type": "winter-plugin",
+    "keywords": [
+        "winter",
+        "wintercms",
+        "winter-plugin",
+        "plugin",
+        "firebase"
+    ],
+    "homepage": "https://github.com/norotaro/wn-firebase-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nelson Otazo",
+            "email": "nelson.otazo@gmail.com",
+            "homepage": "https://nelson.otazo.com.py",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "nelson.otazo@gmail.com",
+        "issues": "https://github.com/norotaro/wn-firebase-plugin/issues",
+        "source": "https://github.com/norotaro/wn-firebase-plugin"
+    },
+    "require": {
+        "kreait/laravel-firebase": "^3.1"
+    }
+}

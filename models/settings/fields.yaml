@@ -1,0 +1,6 @@
+fields:
+  default_project:
+    label: "norotaro.firebase::lang.settings.default_project"
+    comment: "Default Firebase project"
+    type: dropdown
+    placeholder: "norotaro.firebase::lang.settings.default_project_placeholder"
