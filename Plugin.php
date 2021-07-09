@@ -29,6 +29,8 @@ class Plugin extends \System\Classes\PluginBase
         Models\Settings::extend(function ($model) {
             $availableProjects = config('firebase.projects');
 
+            // create a relationship to save the credentials
+            // for each available project
             foreach ($availableProjects as $k => $v) {
                 $model->attachOne[$k . 'Credentials'] = \System\Models\File::class;
             }
@@ -36,8 +38,8 @@ class Plugin extends \System\Classes\PluginBase
 
         \Event::subscribe(Handlers\Events::class);
 
-        // overwrite firebase package configuration with
-        // the configuration established in the plugin
+        // overwrite the Firebase package configurations
+        // with the configurations set in the plugin
         $settings = Models\Settings::instance();
         $packageConfig = config('firebase');
         $pluginConfig = [

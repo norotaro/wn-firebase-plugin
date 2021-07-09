@@ -14,6 +14,9 @@ class Events
      */
     public function subscribe($events)
     {
+        // for supporting multiple acocunts
+        // we need to extend the settings form of this plugin
+        // with a nested form for each available project
         $events->listen('backend.form.extendFields', 'Norotaro\Firebase\Handlers\Events@backendFormExtendFields');
     }
 
@@ -49,6 +52,8 @@ class Events
                 'fileTypes' => 'json',
                 'span' => 'auto',
             ];
+
+            // add nested form for the project
             $projectFields[$p] = [
                 'type' => 'nestedform',
                 'usePanelStyles' => false,
