@@ -1,6 +1,6 @@
 <?php return [
     'plugin' => [
-        'name' => 'Firebase',
+        'name' => 'Firebase para WinterCMS',
         'description' => 'Plugin para configurar el paquete Firebase for Laravel',
     ],
     'settings' => [
