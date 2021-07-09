@@ -15,9 +15,9 @@ class Plugin extends \System\Classes\PluginBase
             'settings' => [
                 'label'       => 'norotaro.firebase::lang.settings.menu',
                 'description' => 'norotaro.firebase::lang.settings.menu_description',
-                // 'category'    => 'Users',
-                'icon'        => 'icon-fire',
-                'class'       => \Norotaro\Firebase\Models\Settings::class,
+                'category'    => 'norotaro.firebase::lang.plugin.name',
+                'icon'        => 'icon-link',
+                'class'       => Models\Settings::class,
                 'keywords'    => 'firebase',
                 'permissions' => ['norotaro.firebase.access_settings'],
             ]

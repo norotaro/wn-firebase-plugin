@@ -4,3 +4,7 @@ plugin:
     author: Norotaro
     icon: oc-icon-fire
     homepage: ''
+permissions:
+    norotaro.firebase.access_settings:
+        tab: 'norotaro.firebase::lang.plugin.name'
+        label: 'norotaro.firebase::lang.permissions.access_settings'
