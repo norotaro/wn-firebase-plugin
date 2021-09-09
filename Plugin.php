@@ -43,9 +43,12 @@ class Plugin extends \System\Classes\PluginBase
         $settings = Models\Settings::instance();
         $packageConfig = config('firebase');
         $pluginConfig = [
-            'default' => $settings->default_project,
             'projects' => $settings->projects,
         ];
+
+        if ($settings->default_project) {
+            $pluginConfig['default'] = $settings->default_project;
+        }
 
         config([
             'firebase' => array_replace_recursive($packageConfig, $pluginConfig),
