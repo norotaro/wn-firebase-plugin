@@ -26,6 +26,10 @@ class Settings extends Model
      */
     public function getProjectsAttribute()
     {
+        if (empty($this->attributes['projects'])) {
+            return [];
+        }
+
         $value = $this->attributes['projects'];
 
         $projects = $this->projectConfigFilter($value);
